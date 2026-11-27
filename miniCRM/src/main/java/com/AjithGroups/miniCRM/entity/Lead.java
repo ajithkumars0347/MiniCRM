@@ -19,6 +19,10 @@ public class Lead {
     @Column(name = "status", nullable = false, length = 30)
     private String status;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "account_id")
+    private Account account;
+
     protected Lead() {
         // Required by JPA
     }
@@ -55,5 +59,12 @@ public class Lead {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
     }
 }

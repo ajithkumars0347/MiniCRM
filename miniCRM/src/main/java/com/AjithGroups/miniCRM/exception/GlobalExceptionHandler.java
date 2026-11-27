@@ -29,4 +29,11 @@ public class GlobalExceptionHandler {
                         "message", "Invalid lead request"
                 ));
     }
+    @ExceptionHandler(AccountNotFoundException.class)
+    public ResponseEntity<Map<String, String>> handleAccountNotFound(
+            AccountNotFoundException exception) {
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(Map.of("message", exception.getMessage()));
+    }
 }
