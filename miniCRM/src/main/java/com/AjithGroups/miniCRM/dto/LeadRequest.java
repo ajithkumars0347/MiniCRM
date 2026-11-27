@@ -17,7 +17,7 @@ public record LeadRequest(
         String email,
 
         @NotBlank
-        @Size(max = 30)
+        @Size(max = 50)
         String status
 
 ) {
