@@ -10,7 +10,7 @@ public class Lead {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", nullable = false, length = 120)
+    @Column(name = "name", nullable = false, length = 130)
     private String name;
 
     @Column(name = "email", nullable = false, length = 255)
